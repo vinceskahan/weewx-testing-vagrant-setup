@@ -4,17 +4,17 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/xenial64"
 
-  # uncomment to forward vm port 80 to localhost:8080
+  #-- uncomment to forward vm port 80 to localhost:8080
   # config.vm.network "forwarded_port", guest: 80, host: 8080
 
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "1024"
   end
 
-  # this provisioner sets the VM up to be able to 'make test'
-  # and gets the current sources for weewx from github
-  #   (note 'root' is used for the db master password - do not use on a production system)
-  #
+  #--  this provisioner sets the VM up to be able to 'make test'
+  #--  and gets the current sources for weewx from github
+  #--    (note 'root' is used for the db master password - do not use on a production system)
+  #-- 
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update  -y
     apt-get install -y git
@@ -29,15 +29,15 @@ Vagrant.configure("2") do |config|
     apt-get install -y mysql-client python-mysqldb
   SHELL
 
-  # expose this directory as /vagrant within the VM
-  #   debian vagrant boxes likely will need this nest line commented out
-  #   as they don't seem to have Virtual Box guest additions working always
+  #--  expose this directory as /vagrant within the VM
+  #--    debian vagrant boxes likely will need this next line commented out
+  #--    as they don't seem to have Virtual Box guest additions working always
   config.vm.synced_folder ".", "/vagrant"
 
-  # this provisioner sets up git-prompt (optional)
+  #--  this provisioner sets up git-prompt (optional)
   config.vm.provision :shell, path: "provision-git-prompt.sh"
 
-  # this provisioner just prints some instructions
+  #--  this provisioner just prints some instructions
   config.vm.provision "shell", inline: <<-SHELL
     echo "-------------------"
     echo "to download and test weewx:"
