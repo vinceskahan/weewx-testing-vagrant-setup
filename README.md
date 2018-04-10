@@ -5,6 +5,7 @@ This Vagrantfile and optional provisioner sets up a local VM for running 'make t
 ### Usage:
 
 * clone this repository to a scratch tree
+* edit the variables at the top of the Vagrantfile
 * vagrant up
 * follow the instructions that will be printed for how to clone/test weewx
 

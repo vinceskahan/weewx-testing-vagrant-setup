@@ -1,7 +1,8 @@
+#!/bin/bash
 
-##################################
-# download and install git-prompt
-##################################
+echo "-----------------------------------------"
+echo " downloading and configuring git-prompt"
+echo "-----------------------------------------"
 
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 
