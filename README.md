@@ -1,3 +1,6 @@
+# DEPRECATED - DO NOT USE
+see my weewx-vagrant repo instead
+
 ## weewx testing setup in Vagrant / Virtual Box
 
 This Vagrantfile and optional provisioner sets up a local VM for running 'make test' on a desired version of weewx.
